@@ -23,6 +23,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
+      Policies:
+        - AdministratorAccess
       Runtime: python3.6
       Role:
         Fn::ImportValue:
