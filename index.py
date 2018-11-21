@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
+import os
 import json
 import datetime
 from jinja2 import Environment, FileSystemLoader
 
 
-file_loader = FileSystemLoader("templates")
-env = Environment(loader=file_loader)
+env = Environment(loader=FileSystemLoader(os.path.abspath("templates/" + os.path.dirname(__file__))))
 
 
 def handler(event, context):
@@ -15,13 +15,3 @@ def handler(event, context):
     return {"statusCode": 200,
             "body": page,
             "headers": {"Content-Type": "text/html"}}
-
-
-def search(event, context):
-    template = env.get_template("search.html")
-    entity = {"locations": ["world"]}
-    page = template.render(entity=entity)
-    return {"statusCode": 200,
-            "body": page,
-            "headers": {"Content-Type": "text/html"}}
-    
