@@ -1,12 +1,12 @@
+# -*- coding: utf-8 -*-
+
 import json
 import datetime
-from jinja2 import Environment, PackageLoader, select_autoescape
+from jinja2 import Environment, FileSystemLoader
 
 
-env = Environment(
-    loader=PackageLoader('ec-sri-registry', 'templates'),
-    autoescape=select_autoescape(['html'])
-)
+file_loader = FileSystemLoader('templates')
+env = Environment(loader=file_loader)
 
 
 def handler(event, context):
