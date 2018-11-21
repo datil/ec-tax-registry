@@ -3,15 +3,13 @@
 import os
 import json
 import datetime
-from jinja2 import Environment, FileSystemLoader
-
-
-env = Environment(loader=FileSystemLoader(os.path.abspath("templates/" + os.path.dirname(__file__))))
 
 
 def handler(event, context):
-    template = env.get_template("home.html")
-    page = template.render()
+    entity = {
+        "tax_id": "0992712554001",
+        "locations": []
+    }
     return {"statusCode": 200,
-            "body": page,
-            "headers": {"Content-Type": "text/html"}}
+            "body": json.dumps(entity),
+            "headers": {"Content-Type": "application/json"}}
