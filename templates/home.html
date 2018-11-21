@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main role="main" class="inner cover">
+  <p>Escribe tu RUC para consultar</p>
+  <p class="lead">
+    <form action="q" method="POST">
+      <div class="form-group">
+	<div class="col-md-6 offset-md-3">
+	  <input type="text" class="form-control form-control-lg" id="tax_id" aria-describedby="taxID" size="13" maxlength="13">
+	</div>
+      </div>
+      <p class="lead">
+        <input type="submit" class="btn btn-lg btn-secondary" value="Consultar"/>
+      </p>
+    </form>
+  </p>
+</main>
+{% endblock %}
