@@ -23,6 +23,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
+      Timeout: 90
       Policies:
         - AdministratorAccess
       Runtime: python3.6
