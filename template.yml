@@ -23,10 +23,13 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      Timeout: 90
+      Timeout: 300
       Policies:
         - AdministratorAccess
       Runtime: python3.6
+      Role:
+        Fn::ImportValue:
+          !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
       Events:
         GetEvent:
           Type: Api
