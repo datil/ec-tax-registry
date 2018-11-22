@@ -17,7 +17,7 @@ def fetchall_athena(query_string, client):
             'Database': 'ec_tax_registry'
         },
         ResultConfiguration={
-            'OutputLocation': 'aws-athena-query-results-758359885368-us-west-2'
+            'OutputLocation': 's3://aws-athena-query-results-758359885368-us-west-2'
         }
     )['QueryExecutionId']
     query_status = None
