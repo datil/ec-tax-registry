@@ -10,9 +10,9 @@ Cómo empezar
 
 * Codifica en UTF-8 los archivos del catastro:
 
-´´´
+```shell
 iconv -f iso-8859-1 -t UTF-8 NOMBRE_DEL_ARCHIVO.txt > NOMBRE_DEL_ARCHIVO-UTF-8.txt
-´´´
+```
 
 * Crea un bucket S3 y coloca los archivos codificados del paso anterior.
 
